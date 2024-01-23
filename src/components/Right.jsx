@@ -6,14 +6,17 @@ import React from "react";
 export const Right = () => {
   const { theme } = useTheme();
   const { count } = UseNumber();
-  const divClassName = theme == "light" ? "bg-white" : "text-white bg-black";
+  const divClassName = `w-1/2  py-10 ${
+    theme == "light" ? "bg-white" : "text-white bg-black"
+  }`;
   return (
-    <div className="bg-blue-200 w-1/2 py-[50px] ">
+    <div className={divClassName}>
       <div>
         <p>{count}</p>
       </div>
     </div>
   );
 };
-
-// import { useNumber } from "@/context/NumChangeContext";
+// const divClassName = `w-3/4 ${
+//   theme == "light" ? "bg-red-200" : "bg-green-700"
+// }`;

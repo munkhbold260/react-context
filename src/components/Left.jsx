@@ -4,7 +4,9 @@ import React from "react";
 
 export const Left = () => {
   const { theme } = useTheme();
-  const divClassName = theme == "light" ? "bg-white" : "text-white bg-black";
+  const divClassName = `w-1/2 py-10 ${
+    theme == "light" ? "bg-white" : "text-white bg-black"
+  }`;
 
   const { count, setCount } = UseNumber();
   const numDecrease = () => {
@@ -17,6 +19,7 @@ export const Left = () => {
         className="bg-green-300 px-5 "
         onClick={() => {
           setCount(count + 1);
+          console.log(theme);
         }}
       >
         +
