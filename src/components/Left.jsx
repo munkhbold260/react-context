@@ -1,19 +1,24 @@
-import { useNumberProvider } from "@/context/NumChangeContext";
-import { useNumber } from "@/context/NumChangeContext";
+import { UseNumber } from "@/context/NumChangeContext";
+import { useTheme } from "@/context/ThemeChangeContext";
+import React from "react";
 
 export const Left = () => {
-  const { count, setCount } = useNumberProvider();
-  const numIncrease = () => {
-    num += 1;
-  };
+  const { theme } = useTheme();
+  const divClassName = theme == "light" ? "bg-white" : "text-white bg-black";
 
+  const { count, setCount } = UseNumber();
   const numDecrease = () => {
-    num -= 1;
+    setCount(count - 1);
   };
 
   return (
-    <div className="bg-blue-100 w-1/2 py-[50px] flex gap-10">
-      <button className="bg-green-300 px-5 " onClick={numIncrease}>
+    <div className={divClassName}>
+      <button
+        className="bg-green-300 px-5 "
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
         +
       </button>
       <button className="bg-green-300 px-5" onClick={numDecrease}>
@@ -22,3 +27,7 @@ export const Left = () => {
     </div>
   );
 };
+// onClick = { numIncrease };
+// onClick = { numDecrease };
+
+/* <button onClick={() => {}}></button>; */

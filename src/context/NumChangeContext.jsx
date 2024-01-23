@@ -1,17 +1,17 @@
 import React, { useContext, createContext, useState } from "react";
-import { Right } from "@/components/Right";
 
-const NumChangeContext = createContext();
-export const useNumber = () => useContext(NumChangeContext);
+const NumberContext = createContext();
+export const UseNumber = () => {
+  return useContext(NumberContext);
+};
 
 export function NumberProvider({ children }) {
-  const [count, setCount] = useState(num);
-
+  const [count, setCount] = useState(0);
   return (
-    <NumChangeContext.Provider value={{ count, setCount }}>
+    <NumberContext.Provider value={{ count, setCount }}>
       {children}
-    </NumChangeContext.Provider>
+    </NumberContext.Provider>
   );
 }
 
-let num = 0;
+///////////////////////////////

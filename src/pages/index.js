@@ -1,11 +1,15 @@
+import { Header } from "@/components/Header";
 import { Left } from "@/components/Left";
 import { Right } from "@/components/Right";
 
 export default function Home() {
   return (
-    <div className="flex">
-      <Left />
-      <Right />
+    <div>
+      <Header />
+      <div className="flex">
+        <Left />
+        <Right />
+      </div>
     </div>
   );
 }
