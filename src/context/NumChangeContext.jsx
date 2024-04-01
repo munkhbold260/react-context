@@ -6,7 +6,7 @@ export const UseNumber = () => {
 };
 
 export function NumberProvider({ children }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   return (
     <NumberContext.Provider value={{ count, setCount }}>
       {children}

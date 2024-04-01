@@ -9,19 +9,16 @@ export const Left = () => {
   }`;
 
   const { count, setCount } = UseNumber();
+  const numIncrease = () => {
+    setCount(count + 1);
+  };
+
   const numDecrease = () => {
     setCount(count - 1);
   };
-
   return (
     <div className={divClassName}>
-      <button
-        className="bg-green-300 px-5 "
-        onClick={() => {
-          setCount(count + 1);
-          console.log(theme);
-        }}
-      >
+      <button className="bg-green-300 px-5 " onClick={numIncrease}>
         +
       </button>
       <button className="bg-green-300 px-5" onClick={numDecrease}>
@@ -30,7 +27,3 @@ export const Left = () => {
     </div>
   );
 };
-// onClick = { numIncrease };
-// onClick = { numDecrease };
-
-/* <button onClick={() => {}}></button>; */
